@@ -24,6 +24,7 @@ CREATE TABLE artikel(
 drop table if exists abrechnung;
 CREATE TABLE abrechnung(
 	id int,
+	ausgeborgtam DATE,
 	ausgeborgtbis DATE,
 	kid int,
 	aid int,
@@ -32,3 +33,4 @@ CREATE TABLE abrechnung(
 	foreign key (kid) references kunde(id),
 	foreign key (aid) references artikel(id)
 );
+ALTER TABLE abrechnung MODIFY id int(11) NOT NULL AUTO_INCREMENT;
